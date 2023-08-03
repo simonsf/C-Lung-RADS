@@ -86,9 +86,9 @@ def sex_balance(df, sex_col='Sex', minor_frac=0.8):
     return pd.concat([df_minor_frac, df_major_frac])
     
     
-def sex_can_balance_subsample(df, sex_col='Sex', minor_frac=0.8):
-    df_can = df[df.cancer==1]
-    df_bn = df[df.cancer==0]
+def sex_can_balance_subsample(df, tag_col='Cancer', sex_col='Sex', minor_frac=0.8):
+    df_can = df[df[tag_col]==1]
+    df_bn = df[df[tag_col]==0]
     
     df_can_frac = sex_balance(df_can, sex_col, minor_frac)
     df_bn_frac = sex_balance(df_bn, sex_col, minor_frac)
@@ -146,10 +146,6 @@ def boosting_onestep_coef(df0,
         df = df[~df[basic_cols].isna().transpose().any()]
     
     x = df[basic_cols]
-    if 'Age' in x.columns:
-        x['Age'] = x['Age'] / 100
-    if '年龄' in x.columns:
-        x['年龄'] = x['年龄'] / 100
     
     df[image_col] = [image_func(i) for i in df[image_col]]
     if dummy is True:
@@ -191,10 +187,6 @@ def boost_lasso_predict(df_test, image_col, basic_cols, descrete_cols, coef, int
         df1 = df1[~df1[basic_cols].isna().transpose().any()]
     #detesting
     x1 = df1[basic_cols]
-    if 'Age' in x1.columns:
-        x1['Age'] = x1['Age'] / 100
-    if '年龄' in x1.columns:
-        x1['年龄'] = x1['年龄'] / 100
     df1[image_col] = [image_func(i) for i in df1[image_col]]
     if dummy is True:
         cols = [c for c in basic_cols if c in descrete_cols]
@@ -231,7 +223,7 @@ def boosting_onestep_coef_bagging(df0, sex_col,
     
     lasso_list = []
     for _ in range(N):
-        df = sex_can_balance_subsample(df0, sex_col=sex_col, minor_frac=minor_frac)
+        df = sex_can_balance_subsample(df0, tag_col, sex_col=sex_col, minor_frac=minor_frac)
         lasso = boosting_onestep_coef(df, image_col, basic_cols, tag_col, descrete_cols, 
                                       method, loss_type, image_func, 
                                       fillna, fillval, 
@@ -252,7 +244,7 @@ def boosting_onestep_coef_bagging(df0, sex_col,
     df_pred, _, _ = boost_lasso_predict(df_pred, 'pred_cli0', [sex_col], [sex_col], coef0, lasso.intercept_, lasso.feature_names_in_,
                                         fillna, fillval, dummy, image_func, loss_type, lr, pred_name='pred_cli')
 
-    feature_names.append(list(lasso.feature_names_in_))
+    feature_names.extend(list(lasso.feature_names_in_))
     coef = np.concatenate((coef,coef0))
     intercept = intercept + lasso.intercept_
 
