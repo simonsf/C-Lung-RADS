@@ -1,0 +1,19 @@
+Solid: 
+    L1: < 6 mm 
+    L2: >= 6 to < 10 mm 
+    L3: >= 10 to < 15 mm 
+    L4: > 15 mm
+ pGGN: 
+    L1: < 6 mm 
+    L2: >= 5 to < 15 mm 
+    L3: > 15 mm
+ mGGN: 
+    L1: < 6 mm 
+    L2: >= 6 to < 11 mm total mean diameter with solid component < 5 mm 
+    L3: >= 6 to < 11 mm total mean diameter with solid component >= 5 to < 9 mm 
+    L4: >= 11 mm total mean diameter or solid component >= 9 mm
+
+
+
+
+
