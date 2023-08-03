@@ -1,0 +1,11 @@
+##columns names
+density_type_column_name: 'NoduleType'
+
+#density types
+solid: 1
+pGGN: 2
+mGGN: 3
+others (calcified): 0
+
+
+
