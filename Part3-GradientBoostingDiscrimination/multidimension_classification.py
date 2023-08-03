@@ -2,6 +2,7 @@ import os
 import importlib
 import sys
 import argparse
+import json
 from imp import reload
 from utils.gradient_boosting import *
 
@@ -92,23 +93,30 @@ class GBClassification():
         self.intercept = intercept
         self.feature_names = feature_names
 
+    def _output_linear_model(self):
+        features = [self.image_col] + self.feature_names
+        coef = np.concatenate((np.ones((1,1)), self.coef))
+        coef = list(np.around(coef.reshape(-1), 2))
+        return dict(zip(('feature_name', 'coefficient', 'intercept'), (features, coef, self.intercept)))
+
     def run(self):
         self._feature_fitting_pipeline()
 
     def get_results(self):
 
         if 'pred_multiD' not in list(self.data.columns):
-            df_pred = self._data_inference()
+            df_pred = self.data_inference()
         else:
             df_pred = self.data
 
         if self.save_dir is None:
-            return dict(zip(('feature_name', 'coefficient', 'intercept'), (self.feature_names, self.coef, self.intercept))), df_pred
+            return self._output_linear_model(), df_pred
         if not os.path.isdir(self.save_dir):
             os.makedirs(self.save_dir)
-        
+        model = self._output_linear_model()
+        json.dump(model, open(os.path.join(self.save_dir, 'linear_model.txt'), 'w'))
         df_pred.to_csv(os.path.join(self.save_dir, 'GBClassification_results.csv'), index=None)
-        return dict(zip(('feature_name', 'coefficient', 'intercept'), (self.feature_names, self.coef, self.intercept))), df_pred
+        return model, df_pred
 
 
 def run_gb_pipeline(config_file_path, test_data=None):
