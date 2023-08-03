@@ -1,0 +1,10 @@
+{"feature_name": ["MalignantProb", "Age", "Smoking_0", "Smoking_1", "Tumor_0", "Tumor_1", "FamLungCancer_0", 
+                  "FamLungCancer_1", "FamTumor_0", "FamTumor_1", "Sex_0", "Sex_1", "SGR+", "SGR-"], 
+ "coefficient": [1.0, 0.11, 0.0, 0.07, 0.0, 0.17, 0.0, 0.0, 0.0, 0.14, 0.0, 0.09, 150.0, 0.0], 
+ "intercept": 0.0}
+ 
+ 
+ 
+ 
+ 
+ 
