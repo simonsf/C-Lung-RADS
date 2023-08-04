@@ -3,7 +3,7 @@ A triage-driven Chinese Lung Nodules Reporting and Data System (C-Lung-RADS) for
 
 ***
 ## Introduction
-This repository is for the proposed multi-phase framework used for Large-scale Pulmonary Nodule Screening on Low-dose Chest Computed Tomography
+This repository is for the proposed C-Lung-RADS framework used for Large-scale Pulmonary Nodule Screening on Low-dose Chest Computed Tomography.
 
 The repository consists of three machine learning components:
 
