@@ -1,0 +1,11 @@
+image_path,mask_path,class,x,y,z,width,height,mean_size,depth,thickness,size_x,size_y,size_z,spacing_x,spacing_y,spacing_z,num_component
+/data/qingzhou/Cls_CAM-main/data/Benign_004/crop.nii.gz,/data/qingzhou/Cls_CAM-main/data/Benign_004/mask.nii.gz,0,-46.1259765625,-46.3740234375,4.5,11,10,10.5,11,1,64,64,64,1,1,1,1
+/data/qingzhou/Cls_CAM-main/data/Malignant_004/crop.nii.gz,/data/qingzhou/Cls_CAM-main/data/Malignant_004/mask.nii.gz,1,-106.9091796875,-149.6669921875,-106.399993896484,7,7,7,8,1,64,64,64,1,1,1,1
+/data/qingzhou/Cls_CAM-main/data/Malignant_005/crop.nii.gz,/data/qingzhou/Cls_CAM-main/data/Malignant_005/mask.nii.gz,1,-68.03125,-84.28125,-285,9,8,8.5,8,1,64,64,64,1,1,1,1
+/data/qingzhou/Cls_CAM-main/data/Benign_005/crop.nii.gz,/data/qingzhou/Cls_CAM-main/data/Benign_005/mask.nii.gz,0,77.9697265625,-88.326171875,-324.5,23,24,23.5,17,1,64,64,64,1,1,1,1
+/data/qingzhou/Cls_CAM-main/data/Malignant_001/crop.nii.gz,/data/qingzhou/Cls_CAM-main/data/Malignant_001/mask.nii.gz,1,-22.55859375,-126.4189453125,-1063,14,11,12.5,16,1,64,64,64,1,1,1,1
+/data/qingzhou/Cls_CAM-main/data/Benign_001/crop.nii.gz,/data/qingzhou/Cls_CAM-main/data/Benign_001/mask.nii.gz,0,-86.794921875,-118.00390625,-889,12,11,11.5,12,1,64,64,64,1,1,1,1
+/data/qingzhou/Cls_CAM-main/data/Malignant_003/crop.nii.gz,/data/qingzhou/Cls_CAM-main/data/Malignant_003/mask.nii.gz,1,-17.5078125,-71.06640625,-517.099975585938,10,11,10.5,10,1,64,64,64,1,1,1,1
+/data/qingzhou/Cls_CAM-main/data/Benign_003/crop.nii.gz,/data/qingzhou/Cls_CAM-main/data/Benign_003/mask.nii.gz,0,-60.84765625,-188.5,895,6,6,6,6,1,64,64,64,1,1,1,1
+/data/qingzhou/Cls_CAM-main/data/Malignant_002/crop.nii.gz,/data/qingzhou/Cls_CAM-main/data/Malignant_002/mask.nii.gz,1,64.5625,-118.875,-64.5,20,19,19.5,17,1,64,64,64,1,1,1,1
+/data/qingzhou/Cls_CAM-main/data/Benign_002/crop.nii.gz,/data/qingzhou/Cls_CAM-main/data/Benign_002/mask.nii.gz,0,24.9658203125,-207.958984375,-368.299987792969,12,12,12,12,1,64,64,64,1,1,1,1
