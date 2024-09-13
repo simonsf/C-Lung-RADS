@@ -1,5 +1,7 @@
 # C-Lung-RADS
-A triage-driven Chinese Lung Nodules Reporting and Data System (C-Lung-RADS) for the estimatation of malignant risk of lung cancer.
+The is the code repository for the paper:
+
+Data-driven risk stratification and precision management of pulmonary nodules detected on chest computed tomography. Chengdi Wang, Jun Shao, Yichu He, Jiaojiao Wu, Xingting Liu, Liuqing Yang, Ying Wei, Xiang Sean Zhou, Yiqiang Zhan, Feng Shi, Dinggang Shen, and Weimin Li
 
 ***
 ## Introduction
